@@ -1,0 +1,36 @@
+
+
+ .advertBlock {
+    background-image: url('../../../assets/petsImgMainPage.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 40px 210px 40px;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .textAdvertBlock {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+  
+  .textAdvertBlock h2 {
+    font-weight: 700;
+    font-size: 96px;
+    color: #ffffff;
+    margin-bottom: 40px;
+    max-width: 88%;
+  }
+  .button {
+    animation: fadeInUp 0.8s ease-out both;
+    animation-delay: 0.3s;
+  }

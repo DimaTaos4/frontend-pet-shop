@@ -1,0 +1,14 @@
+.mapWrapper {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 80px;
+}
+
+.footerTitle {
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}

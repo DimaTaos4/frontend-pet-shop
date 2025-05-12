@@ -1,0 +1,24 @@
+.navbarMenu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.navbarMenuItem {
+    list-style: none;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.navbarMenuItem:global(.active) {
+    font-weight: 700;
+    color: var(--blue-color);
+}
+
+.navbarMenuItem:hover {
+    color: var(--blue-color);
+    transform: translateY(-2px);
+}

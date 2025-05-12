@@ -1,0 +1,29 @@
+.input {
+    width: 100%;
+    padding: 16px 32px;
+    border: 1px solid #FFFFFF;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.input::placeholder {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.error {
+    color: rgb(244, 52, 52);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.inputBlock {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

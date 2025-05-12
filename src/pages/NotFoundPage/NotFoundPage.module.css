@@ -1,0 +1,21 @@
+.notFoundPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 80px 0;
+}
+
+.notFoundPageInfoMessage p:nth-child(1) {
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--color-black);
+}
+
+.notFoundPageInfoMessage p:nth-child(2) {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 32px;
+    color: var(--color-grey);
+}

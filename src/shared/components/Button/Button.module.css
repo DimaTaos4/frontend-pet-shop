@@ -1,0 +1,48 @@
+.btn {
+    padding: 16px 56px;
+    background-color: #0D50FF;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #282828;
+    color: #FFFFFF;
+}
+
+.btnToPages {
+    padding: 8px 16px;
+    border-radius: radius small;
+    border-width: 1px;
+    border-radius: 6px;
+    border: 1px solid #DDDDDD;
+    color: var(--text-color-btn);
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btnToPages:hover {
+    background-color: #f5f5f5;
+    color: #6b6b6b;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 16px 32px;
+    gap: 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color-btn);
+    transition: 0.3s ease;
+}

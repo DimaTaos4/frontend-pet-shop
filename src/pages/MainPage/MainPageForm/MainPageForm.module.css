@@ -1,0 +1,47 @@
+.formGetDiscount {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 32px 0px;
+    gap: 24px;
+    background: linear-gradient(261.47deg, #2451C6 32.63%, #0D50FF 98.96%);
+    border-radius: 12px;
+}
+
+.formGetDiscount h2 {
+    align-self: center;
+    font-weight: 700;
+    font-size: 64px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.imgForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imgForm img {
+    width: 100%;
+    max-width: 65%;
+    height: auto;
+}
+
+.imgForm form {
+    width: 100%;
+}
+
+.btnSubmit {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.btnSubmit:hover {
+    background-color: var(--btn-hover-color);
+    color: #FFFFFF;
+}
+
+.btnSubmited {
+    background-color: var(--light-grey);
+    color: var(--text-submited-btn);
+}

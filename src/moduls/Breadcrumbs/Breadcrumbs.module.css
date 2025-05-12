@@ -1,0 +1,20 @@
+.breadcrumbsLinks {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.breadcrumbItem {
+    display: flex;
+    align-items: center;
+}
+
+.separatorLine {
+    width: 16px;
+    height: 2px;
+    background-color: #DDDDDD;
+}
+
+.link {
+    text-decoration: none;
+}

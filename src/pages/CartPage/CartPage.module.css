@@ -1,0 +1,19 @@
+.cartInfo {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    margin-bottom: 80px;
+}
+
+.emtyCart {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 80px;
+}
+
+.emtyCart p {
+    font-weight: 500;
+    font-size: 20px;
+    color: #282828;
+}
