@@ -22,7 +22,7 @@
   position: absolute;
   top: 43px;
   right: 63px;
-  background-color: #0D50FF;
+  background-color: var(--background-color);
   border-radius: 50%;
   padding: 7px 10px;
   font-weight: 600;

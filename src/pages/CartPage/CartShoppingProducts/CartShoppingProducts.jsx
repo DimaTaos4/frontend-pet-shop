@@ -6,9 +6,17 @@ import { useDispatch } from 'react-redux'
 import { selectCart } from '../../../redux/cart/cart-selector'
 import { deleteFromCart } from '../../../redux/cart/cart-slice'
 import { updateQuantity } from '../../../redux/cart/cart-slice'
-
+import { useTheme } from '@emotion/react'
 
 const CartShoppingProducts = () => {
+    const { colors } = useTheme()
+    const style = {
+        '--background-color': colors.fontColorBlue,
+        '--light-grey': colors.lightGrey,
+        '--text-color-black': colors.textColorBlack,
+        '--font-color-black': colors.fontColorBlack,
+        '--grey': colors.grey,
+    }
     const dispatch = useDispatch()
     const onDeleteFromCart = (id) => {
         dispatch(deleteFromCart(id))
@@ -52,7 +60,7 @@ const CartShoppingProducts = () => {
         </div>
     )
     return (
-        <div className={styles.allChosenProducts}>
+        <div className={styles.allChosenProducts} style={style}>
             {elements}
         </div>
 

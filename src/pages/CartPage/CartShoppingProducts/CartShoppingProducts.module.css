@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    /* flex: 1; */
     width: 60%;
 }
 
@@ -53,26 +52,26 @@
 .prices {
     display: flex;
     gap: 16px;
-    align-items: first baseline;
+    align-items: baseline;
 }
 
 .discountPrice {
     font-weight: 600;
     font-size: 40px;
-    color: #282828;
+    color: var(--text-color-black);
 }
 
 .price {
     font-weight: 500;
     font-size: 20px;
     text-decoration: line-through;
-    color: #8B8B8B;
+    color: var(--grey);
 }
 
 .originalPrice {
     font-weight: 600;
     font-size: 40px;
-    color: #282828;
+    color: var(--text-color-black);
 }
 
 .deleteButton {

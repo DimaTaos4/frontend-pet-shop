@@ -1,22 +1,37 @@
 import styles from './DiscountFilter.module.css'
+import { useSearchParams } from 'react-router-dom'
 import { CheckedCheckbox } from '../../../components/icons'
 
-const DiscountFilter = ({ value, onChange }) => {
+const DiscountFilter = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const handleChange = (e) => {
+    const newParams = new URLSearchParams(searchParams);
+    if (e.target.checked) {
+      newParams.set('discountOnly', 'true');
+    } else {
+      newParams.delete('discountOnly');
+    }
+    setSearchParams(newParams);
+  };
+
+  const discountOnly = searchParams.get('discountOnly') === 'true';
+
   return (
     <div className={styles.discountFilter}>
       <h2>Discounted items</h2>
       <label className={styles.checkboxContainer}>
         <input
           type="checkbox"
-          checked={value}
-          onChange={(e) => onChange('discountOnly', e.target.checked)}
+          checked={discountOnly}
+          onChange={handleChange}
         />
         <span className={styles.checkmark}>
-          {value && <CheckedCheckbox className={styles.checkIcon} />}
+          {discountOnly && <CheckedCheckbox className={styles.checkIcon} />}
         </span>
       </label>
     </div>
   )
 }
 
-export default DiscountFilter
+export default DiscountFilter;

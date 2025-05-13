@@ -1,5 +1,5 @@
 .formCartInfo {
-    background-color: #F1F3F4;
+    background-color: var(--light-grey);
     display: flex;
     flex-direction: column;
     padding: 32px;
@@ -10,7 +10,7 @@
 }
 
 .formCartInfo h2 {
-    color: #282828;
+    color: var(--text-color-black);
     font-weight: 700;
     font-size: 40px;
 }
@@ -18,7 +18,7 @@
 .formCartInfo p {
     font-weight: 500;
     font-size: 40px;
-    color: #8B8B8B;
+    color: var(--grey);
 }
 
 .infoTotalPrice {
@@ -29,23 +29,23 @@
 .infoTotalPrice span:nth-child(1) {
     font-weight: 500;
     font-size: 40px;
-    color: #8B8B8B;
+    color: var(--grey);
 }
 
 .infoTotalPrice span:nth-child(2) {
     font-weight: 700;
     font-size: 64px;
-    color: #282828;
+    color: var(--text-color-black);
 }
 
 .formCart input {
     background-color: #ffffff;
-    color: #282828;
+    color: var(--text-color-black);
 
 }
 
 .formCart input::placeholder {
-    color: #8B8B8B;
+    color: var(--grey);
 }
 
 
@@ -55,10 +55,10 @@
 }
 
 .btnSubmit {
-    background-color: #0D50FF;
+    background-color: var(--background-color);
     color: #FFFFFF;
 }
 
 .btnSubmit:hover {
-    background-color: #282828;
+    background-color: var(--font-color-black);
 }

@@ -6,10 +6,18 @@ import styles from './ProductPage.module.css'
 import Counter from '../../shared/components/Counter/Counter'
 import { addToCart } from '../../redux/cart/cart-slice'
 import { useDispatch } from 'react-redux'
-
+import { useTheme } from '@emotion/react'
 const ProductPage = () => {
+    const { colors } = useTheme()
+    const style = {
+        '--background-color': colors.fontColorBlue,
+        '--font-black': colors.fontColorBlack,
+        '--font-color-blue':colors.fontColorBlue,
+        '--grey': colors.grey,
+        '--text-black': colors.textColorBlack,
+    }
     const [quantity, setQuantity] = useState(1)
-    const [isAdded, setIsAdded] = useState(false) 
+    const [isAdded, setIsAdded] = useState(false)
     const { id } = useParams()
     const [product, setProduct] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -55,7 +63,7 @@ const ProductPage = () => {
     }
 
     return (
-        <div className={styles.productPage}>
+        <div className={styles.productPage} style={style}>
             <img src={`${IMAGE_BASE_URL}${product.image}`} alt={product.title} className={styles.productImage} />
             <div className={styles.productInfo}>
                 <h2>{product.title}</h2>

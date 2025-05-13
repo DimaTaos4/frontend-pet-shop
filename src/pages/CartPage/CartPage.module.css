@@ -15,7 +15,7 @@
 .emtyCart p {
     font-weight: 500;
     font-size: 20px;
-    color: #282828;
+    color: var(--text-color);
 }
 
 .messageModal {
@@ -23,11 +23,13 @@
     flex-direction: column;
     gap: 24px;
 }
-.messageModal h2{
-font-weight: 600;
-font-size: 40px;
+
+.messageModal h2 {
+    font-weight: 600;
+    font-size: 40px;
 }
-.messageModal p{
-font-size: 20px;
-font-weight: 600;
+
+.messageModal p {
+    font-size: 20px;
+    font-weight: 600;
 }

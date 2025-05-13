@@ -6,6 +6,7 @@ import { fetchCategories } from '../../../redux/categories/categories-thunk';
 import CategoryList from '../../../shared/components/CategoryList/CategoryList';
 import styles from './CategoriesItems.module.css'
 const CategoriesItems = () => {
+
     const { items, error, loading } = useSelector(selectCategories);
     const dispatch = useDispatch();
 
@@ -14,7 +15,10 @@ const CategoriesItems = () => {
     }, [dispatch]);
 
     const { colors } = useTheme();
-    const style = { '--black': colors.textColorbBlack };
+    const style = {
+        '--black': colors.textColorbBlack,
+        '--color-font-blue': colors.textColorBlue,
+    };
 
     return (
         <>

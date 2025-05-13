@@ -3,12 +3,12 @@ import PriceFilter from './PriceFilter/PriceFilter'
 import DiscountFilter from './DiscountFilter/DiscountFilter'
 import SortFilter from './SortFilter/SortFilter'
 
-const Filter = ({ hideDiscount = false, filters, onFilterChange }) => {
+const Filter = ({ filters, onFilterChange, hideDiscount = false }) => {
     return (
         <div className={styles.allFilters}>
             <PriceFilter filters={filters} onFilterChange={onFilterChange} />
             {!hideDiscount && (
-                <DiscountFilter value={filters.discountOnly} onChange={onFilterChange} />
+                <DiscountFilter filters={filters} />
             )}
             <SortFilter filters={filters} onFilterChange={onFilterChange} />
         </div>

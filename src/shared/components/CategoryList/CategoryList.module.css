@@ -41,15 +41,3 @@
     transition: 0.3s;
 }
 
-/* 
-
-@media (max-width: 768px) {
-    .item {
-        width: 100%;
-        max-width: 90%;
-    }
-
-    .item img {
-        height: 19rem;
-    }
-} */

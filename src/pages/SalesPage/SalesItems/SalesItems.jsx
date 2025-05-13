@@ -4,47 +4,46 @@ import { useTheme } from '@emotion/react'
 import useProducts from '../../../shared/hooks/useProducts'
 
 const SalesItems = ({ filters = {}, limit }) => {
-    const { colors } = useTheme()
-    const { products, loading, error } = useProducts()
+  const { products, loading, error } = useProducts()
+  const { colors } = useTheme()
 
-    const style = {
-        '--text-color-grey': colors.grey,
-        '--text-color-black': colors.textColorBlack,
-        '--font-color-blue': colors.fontColorBlue,
-    }
+  const style = {
+    '--text-color-grey': colors.grey,
+    '--text-color-black': colors.textColorBlack,
+    '--font-color-blue': colors.fontColorBlue,
+  }
 
-    if (loading) return <p>Loading discounted products...</p>
-    if (error) return <p>Failed to load products.</p>
+  if (loading) return <p>Loading discounted products...</p>
+  if (error) return <p>Failed to load products.</p>
 
-    // 1. Фильтрация по скидке
-    const salesProducts = products.filter(product => product.discont_price !== null)
+  const salesProducts = products.filter(p => p.discont_price)
 
-    // 2. Применяем фильтры по цене
-    const filtered = salesProducts
-        .filter(p => !filters.priceFrom || (p.discont_price || p.price) >= +filters.priceFrom)
-        .filter(p => !filters.priceTo || (p.discont_price || p.price) <= +filters.priceTo)
+  const priceFrom = filters.priceFrom ? +filters.priceFrom : 0;
+  const priceTo = filters.priceTo ? +filters.priceTo : Infinity;
 
-    // 3. Сортировка
-    if (filters.sort === 'price: low-high') {
-        filtered.sort((a, b) => (a.discont_price || a.price) - (b.discont_price || b.price))
-    }
+  const filtered = salesProducts
+    .filter(p => (p.discont_price || p.price) >= priceFrom)
+    .filter(p => (p.discont_price || p.price) <= priceTo)
 
-    if (filters.sort === 'price: high-low') {
-        filtered.sort((a, b) => (b.discont_price || b.price) - (a.discont_price || a.price))
-    }
+  if (filters.sort === 'price: low-high') {
+    filtered.sort((a, b) => (a.discont_price || a.price) - (b.discont_price || b.price))
+  }
 
-    if (filters.sort === 'newest') {
-        filtered.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-    }
+  if (filters.sort === 'price: high-low') {
+    filtered.sort((a, b) => (b.discont_price || b.price) - (a.discont_price || a.price))
+  }
 
-    // 4. Ограничение по количеству
-    const limitedSales = limit ? filtered.slice(0, limit) : filtered
+  if (filters.sort === 'newest') {
+    filtered.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+  }
 
-    return (
-        <section className={styles.salesConteiner} style={style}>
-            <ProductList products={limitedSales} />
-        </section>
-    )
+  const limitedSales = limit ? filtered.slice(0, limit) : filtered
+
+  return (
+    <section className={styles.salesConteiner} style={style}>
+      <ProductList products={limitedSales} />
+    </section>
+  )
 }
 
 export default SalesItems

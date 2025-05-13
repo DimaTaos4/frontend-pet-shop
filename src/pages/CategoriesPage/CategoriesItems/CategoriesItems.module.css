@@ -1,4 +1,3 @@
 .categoriesItems :hover p {
-    color: #0d50ff;
+    color: var(--color-font-blue);
 }
-

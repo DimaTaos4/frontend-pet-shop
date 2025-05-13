@@ -7,8 +7,18 @@ import { sendOrderRequest } from '../../../shared/api/sendOrder-api'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectCart } from '../../../redux/cart/cart-selector'
 import { clearCart } from '../../../redux/cart/cart-slice'
+import { useTheme } from '@emotion/react'
+
 
 const CartProductsForm = ({ fields, style, onSuccess }) => {
+    const { colors } = useTheme()
+    const stylee = {
+        '--background-color': colors.fontColorBlue,
+        '--light-grey': colors.lightGrey,
+        '--text-color-black': colors.textColorBlack,
+        '--font-color-black': colors.fontColorBlack,
+        '--grey': colors.grey,
+    }
     const { register, reset, handleSubmit, formState: { errors }, } = useForm()
     const [isFormSubmited, setIsFromSubmited] = useState(false)
     const dispacth = useDispatch()
@@ -37,7 +47,7 @@ const CartProductsForm = ({ fields, style, onSuccess }) => {
     }, 0)
 
     return (
-        <div className={styles.formCartInfo}>
+        <div className={styles.formCartInfo} style={stylee}>
             <h2>Order details</h2>
             <p>{totalQuantity} item{totalQuantity !== 1 ? 's' : ''}</p>
             <div className={styles.infoTotalPrice}>

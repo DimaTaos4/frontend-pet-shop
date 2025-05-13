@@ -1,5 +1,6 @@
 import styles from './SortFilter.module.css'
 import { useId } from 'react'
+
 const SortFilter = ({ filters, onFilterChange }) => {
   const id = useId()
   return (
@@ -7,9 +8,9 @@ const SortFilter = ({ filters, onFilterChange }) => {
       <label htmlFor={id}>Sorted</label>
       <select
         id={id}
-        className={styles.section}
+        className={styles.select}
         value={filters.sort}
-        onChange={e => onFilterChange('sort', e.target.value)}
+        onChange={(e) => onFilterChange('sort', e.target.value)}
       >
         <option value="">by default</option>
         <option value="newest">newest</option>

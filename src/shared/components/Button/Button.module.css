@@ -1,6 +1,6 @@
 .btn {
     padding: 16px 56px;
-    background-color: #0D50FF;
+    background-color: var(--font-color-blue);
     border-radius: 6px;
     font-size: 20px;
     font-weight: 600;
@@ -11,13 +11,12 @@
 }
 
 .btn:hover {
-    background-color: #282828;
+    background-color: var(--btn-hover-color);
     color: #FFFFFF;
 }
 
 .btnToPages {
     padding: 8px 16px;
-    border-radius: radius small;
     border-width: 1px;
     border-radius: 6px;
     border: 1px solid #DDDDDD;

@@ -1,18 +1,26 @@
 import SectionTitle from '../../shared/components/SectionTitle/SectionTitle'
 import ProductsItems from './ProductsItems/ProductsItems'
 import Filter from '../../shared/lib/Filter/Filter'
-import { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 const ProductsPage = () => {
-  const [filters, setFilters] = useState({
-    discountOnly: false,
-    priceFrom: '',
-    priceTo: '',
-    sort: '',
-  })
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const filters = {
+    priceFrom: searchParams.get('priceFrom') || '',
+    priceTo: searchParams.get('priceTo') || '',
+    sort: searchParams.get('sort') || '',
+    discountOnly: searchParams.get('discountOnly') === 'true',
+  }
 
   const handleFilterChange = (key, value) => {
-    setFilters(prev => ({ ...prev, [key]: value }))
+    const updatedParams = new URLSearchParams(searchParams)
+    if (value) {
+      updatedParams.set(key, value)
+    } else {
+      updatedParams.delete(key)
+    }
+    setSearchParams(updatedParams)
   }
 
   return (

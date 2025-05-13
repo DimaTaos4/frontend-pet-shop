@@ -9,13 +9,19 @@ import { Button } from '../../shared/components/Button/Button'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import Modal from '../../shared/components/Modal/Modal'
+import { useTheme } from '@emotion/react'
+
+
 
 const CartPage = () => {
     const cart = useSelector(selectCart)
     const [isModalOpen, setIsModalOpen] = useState(false)
-
+    const { colors } = useTheme()
+    const style = {
+        '--text-color': colors.textColorBlack
+    }
     return (
-        <section>
+        <section style={style}>
             {isModalOpen && (
                 <Modal onClose={() => setIsModalOpen(false)}>
                     <div className={styles.messageModal}>
