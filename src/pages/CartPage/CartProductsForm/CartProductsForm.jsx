@@ -4,26 +4,27 @@ import { useForm } from 'react-hook-form'
 import { SubmitButton } from '../../../shared/components/Button/Button'
 import { useState } from 'react'
 import { sendOrderRequest } from '../../../shared/api/sendOrder-api'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { selectCart } from '../../../redux/cart/cart-selector'
+import { clearCart } from '../../../redux/cart/cart-slice'
 
-
-const CartProductsForm = ({ fields, style }) => {
-
+const CartProductsForm = ({ fields, style, onSuccess }) => {
     const { register, reset, handleSubmit, formState: { errors }, } = useForm()
-
     const [isFormSubmited, setIsFromSubmited] = useState(false)
-
+    const dispacth = useDispatch()
     const onSubmit = async (values) => {
         try {
             await sendOrderRequest(values);
             reset();
             setIsFromSubmited(true)
-            console.log('Form is successfully send');
+            console.log('Form is successfully sent');
+            onSuccess?.();
+            setTimeout(() => {
+                dispacth(clearCart());
+            }, 2000);
         } catch (error) {
-            console.error('something went wrong', error.message);
+            console.error('Something went wrong', error.message);
         }
-
     }
 
     const cart = useSelector(selectCart)
@@ -56,7 +57,7 @@ const CartProductsForm = ({ fields, style }) => {
                 ))}
 
 
-                {isFormSubmited ? <SubmitButton type='submit' disabled>The order has been placed</SubmitButton> :
+                {isFormSubmited ? <SubmitButton type='submit' disabled>The order is placed</SubmitButton> :
                     < SubmitButton type='submit' style={style} className={styles.btnSubmit} >Order</SubmitButton>}
             </form>
         </div >

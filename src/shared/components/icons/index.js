@@ -1,4 +1,5 @@
 export { default as HomePageLogo } from './HomePageLogo/HomePageLogo.jsx'
 export { default as CartIcon } from './CartIcon/CartIcon.jsx'
 export { default as InstagramIcon } from './FooterContactsMenuIcons/InstagramIcon.jsx'
-export {default as WhatsAppIcon} from './FooterContactsMenuIcons/WhatsAppIcon.jsx'
+export { default as WhatsAppIcon } from './FooterContactsMenuIcons/WhatsAppIcon.jsx'
+export { default as CheckedCheckbox } from './CheckedCheckbox/CheckedCheckbox.jsx'

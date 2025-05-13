@@ -1,0 +1,29 @@
+.priceFilter {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.priceFilter label {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.priceFilter input {
+    width: 112;
+    height: 36;
+    padding: 8px 16px;
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    border-width: 1px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #282828;
+}
+
+
+.priceFilter input::placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    color: #8B8B8B;
+}

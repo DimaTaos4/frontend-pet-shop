@@ -1,5 +1,5 @@
 .navbar {
-
+  position: sticky;
   padding: 30px 0;
   border: 1px solid #DDDDDD;
 }

@@ -17,3 +17,17 @@
     font-size: 20px;
     color: #282828;
 }
+
+.messageModal {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.messageModal h2{
+font-weight: 600;
+font-size: 40px;
+}
+.messageModal p{
+font-size: 20px;
+font-weight: 600;
+}

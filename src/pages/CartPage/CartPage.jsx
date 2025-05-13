@@ -7,22 +7,37 @@ import { useSelector } from 'react-redux'
 import { selectCart } from '../../redux/cart/cart-selector'
 import { Button } from '../../shared/components/Button/Button'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import Modal from '../../shared/components/Modal/Modal'
 
 const CartPage = () => {
     const cart = useSelector(selectCart)
-
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     return (
-        <section >
-            <CartTitleInfo title='Shopping cart' to='/products' button='Back to the store' />
-            {cart.length > 0 ? <div className={styles.cartInfo}>
-                <CartShoppingProducts />
-                <CartProductsForm fields={dataFields} />
-            </div> : <div className={styles.emtyCart}>
-                <p>Looks like you have no items in your basket currently.</p>
-                <Link to='/products'><Button>Continue Shopping</Button></Link>
-            </div>}
+        <section>
+            {isModalOpen && (
+                <Modal onClose={() => setIsModalOpen(false)}>
+                    <div className={styles.messageModal}>
+                        <h2>Congratulations!</h2>
+                        <p>Your order has been successfully placed on the website.</p>
+                        <p>A manager will contact you shortly to confirm your order.</p>
+                    </div>
+                </Modal>
+            )}
 
+            <CartTitleInfo title='Shopping cart' to='/products' button='Back to the store' />
+            {cart.length > 0 ? (
+                <div className={styles.cartInfo}>
+                    <CartShoppingProducts />
+                    <CartProductsForm fields={dataFields} onSuccess={() => setIsModalOpen(true)} />
+                </div>
+            ) : (
+                <div className={styles.emtyCart}>
+                    <p>Looks like you have no items in your basket currently.</p>
+                    <Link to='/products'><Button>Continue Shopping</Button></Link>
+                </div>
+            )}
         </section>
     )
 }

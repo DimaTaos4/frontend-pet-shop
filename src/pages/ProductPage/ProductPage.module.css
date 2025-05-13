@@ -100,16 +100,29 @@
     padding: 0;
     text-decoration: underline;
     align-self: flex-start;
-    
+
 }
 
 .function {
     display: flex;
     gap: 32px;
 }
-.btnProduct{
+
+.btnProduct {
     width: 60%;
 }
-.counter{
+
+.counter {
     width: 70%;
+}
+
+.btnAddedToCart {
+    width: 60%;
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btnAddedToCart:hover {
+    background-color: #218838;
 }

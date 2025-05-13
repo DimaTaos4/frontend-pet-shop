@@ -1,0 +1,28 @@
+.sortFilter {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sortFilter label {
+    font-weight: 600;
+    font-size: 20px;
+    color: #282828;
+}
+
+.section {
+    appearance: none;
+    padding: 8px 8px 8px 16px;
+    width: 200px;
+    height: 36px;
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #282828;
+    background-color: white;
+    background-image: url('../../../../assets/selectIcon.svg');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}

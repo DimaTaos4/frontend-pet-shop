@@ -6,14 +6,17 @@ import styles from './ProductPage.module.css'
 import Counter from '../../shared/components/Counter/Counter'
 import { addToCart } from '../../redux/cart/cart-slice'
 import { useDispatch } from 'react-redux'
+
 const ProductPage = () => {
     const [quantity, setQuantity] = useState(1)
+    const [isAdded, setIsAdded] = useState(false) 
     const { id } = useParams()
     const [product, setProduct] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [showFullDescription, setShowFullDescription] = useState(false)
     const dispatch = useDispatch()
+
     useEffect(() => {
         const fetchProduct = async () => {
             try {
@@ -33,8 +36,6 @@ const ProductPage = () => {
     if (error) return <p>{error}</p>
     if (!product) return <p>Продукт не найден</p>
 
-
-
     const IMAGE_BASE_URL = 'http://localhost:3333/'
 
     const toggleDescription = () => setShowFullDescription(prev => !prev)
@@ -44,9 +45,13 @@ const ProductPage = () => {
         ? product.description
         : product.description.slice(0, MAX_LENGTH) + (isLong ? '...' : '')
 
-
     const onAddToCart = () => {
         dispatch(addToCart({ ...product, quantity }))
+        setIsAdded(true)
+
+        setTimeout(() => {
+            setIsAdded(false)
+        }, 3000)
     }
 
     return (
@@ -76,8 +81,11 @@ const ProductPage = () => {
                         onIncrement={() => setQuantity(prev => prev + 1)}
                         onDecrement={() => setQuantity(prev => (prev > 1 ? prev - 1 : 1))}
                     />
-                    <Button className={styles.btnProduct} onClick={onAddToCart}>
-                        Add to cart
+                    <Button
+                        className={isAdded ? styles.btnAddedToCart : styles.btnProduct}
+                        onClick={onAddToCart}
+                    >
+                        {isAdded ? 'Added' : 'Add to cart'}
                     </Button>
                 </div>
 

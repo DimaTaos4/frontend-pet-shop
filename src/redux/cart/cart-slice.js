@@ -26,9 +26,12 @@ const cartSlice = createSlice({
             if (item) {
                 item.quantity = quantity;
             }
+        },
+        clearCart: (store) => {
+            store.cart = [];
         }
     }
 })
 
-export const { addToCart, deleteFromCart,updateQuantity } = cartSlice.actions
+export const { addToCart, deleteFromCart, updateQuantity, clearCart } = cartSlice.actions
 export default cartSlice.reducer
