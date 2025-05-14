@@ -5,6 +5,7 @@ import styles from './CategoryPage.module.css'
 import ProductList from '../../shared/components/ProductList/ProductList'
 import { useTheme } from '@emotion/react'
 import SectionTitle from '../../shared/components/SectionTitle/SectionTitle'
+import Loader from '../../shared/components/Loader/Loader'
 const CategoryPage = () => {
     const { id } = useParams()
     const [category, setCategory] = useState(null)
@@ -19,7 +20,7 @@ const CategoryPage = () => {
                 setCategory(response.data.category)
                 setProducts(response.data.data)
             } catch {
-                setError('Ошибка при загрузке категории')
+                setError('Categories loading errors')
             } finally {
                 setLoading(false)
             }
@@ -36,8 +37,8 @@ const CategoryPage = () => {
         '--font-color-blue': colors.fontColorBlue,
     }
 
-    if (loading) return <p>Загрузка категории...</p>
-    if (error) return <p>{error}</p>
+    if (loading) return <Loader loading={loading} />
+    if (error) return <p className={styles.error}>{error}</p>
 
     return (
         <div className={styles.categoryPage}>

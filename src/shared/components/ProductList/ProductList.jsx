@@ -1,18 +1,14 @@
 import styles from './ProductList.module.css'
 import { Button } from '../Button/Button'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../../redux/cart/cart-slice'
-import { selectCart } from '../../../redux/cart/cart-selector'
 
 import { useState } from 'react';
 
 const ProductList = ({ products = [] }) => {
     const IMAGE_BASE_URL = 'http://localhost:3333/'
 
-    const cart = useSelector(selectCart)
-    console.log(cart)
 
     const dispatch = useDispatch()
 

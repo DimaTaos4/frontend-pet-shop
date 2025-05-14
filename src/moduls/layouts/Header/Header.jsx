@@ -13,7 +13,6 @@ const Header = () => {
         '--background-color': colors.fontColorBlue
     }
     const quantity = useSelector(selectCartCount)
-    console.log(quantity);
 
     return (
 

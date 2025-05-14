@@ -7,12 +7,13 @@ import Counter from '../../shared/components/Counter/Counter'
 import { addToCart } from '../../redux/cart/cart-slice'
 import { useDispatch } from 'react-redux'
 import { useTheme } from '@emotion/react'
+import Loader from '../../shared/components/Loader/Loader'
 const ProductPage = () => {
     const { colors } = useTheme()
     const style = {
         '--background-color': colors.fontColorBlue,
         '--font-black': colors.fontColorBlack,
-        '--font-color-blue':colors.fontColorBlue,
+        '--font-color-blue': colors.fontColorBlue,
         '--grey': colors.grey,
         '--text-black': colors.textColorBlack,
     }
@@ -31,7 +32,7 @@ const ProductPage = () => {
                 const response = await axios.get(`http://localhost:3333/products/${id}`)
                 setProduct(response.data[0])
             } catch {
-                setError('Ошибка при загрузке продукта')
+                setError('Product loading error')
             } finally {
                 setLoading(false)
             }
@@ -40,9 +41,9 @@ const ProductPage = () => {
         fetchProduct()
     }, [id])
 
-    if (loading) return <p>Загрузка...</p>
-    if (error) return <p>{error}</p>
-    if (!product) return <p>Продукт не найден</p>
+    if (loading) return <Loader loading={loading} />
+    if (error) return <p className={styles.error}>{error}</p>
+    if (!product) return <p className={styles.notFoundProduct}>Product not found</p>
 
     const IMAGE_BASE_URL = 'http://localhost:3333/'
 

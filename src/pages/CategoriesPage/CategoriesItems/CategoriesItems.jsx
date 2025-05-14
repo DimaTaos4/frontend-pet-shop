@@ -5,6 +5,7 @@ import { selectCategories } from '../../../redux/categories/categories-selector'
 import { fetchCategories } from '../../../redux/categories/categories-thunk';
 import CategoryList from '../../../shared/components/CategoryList/CategoryList';
 import styles from './CategoriesItems.module.css'
+import Loader from '../../../shared/components/Loader/Loader';
 const CategoriesItems = () => {
 
     const { items, error, loading } = useSelector(selectCategories);
@@ -22,7 +23,7 @@ const CategoriesItems = () => {
 
     return (
         <>
-            {loading && <p>Loading</p>}
+            {loading && <Loader loading={loading}  />}
             {error && <p>Error</p>}
             {items.length > 0 && <CategoryList className={styles.categoriesItems} items={items} style={style} />}
         </>

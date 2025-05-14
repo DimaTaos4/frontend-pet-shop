@@ -24,16 +24,7 @@
     gap: 32px;
 }
 
-/* @media (max-width: 768px) {
-    .productPage {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .productInfo {
-        width: 100%;
-    }
-} */
 
 .productInfo h2 {
     font-weight: 700;
@@ -125,4 +116,15 @@
 
 .btnAddedToCart:hover {
     background-color: #218838;
+}
+
+.error {
+    font-size: 25px;
+    font-weight: 700;
+    color: red;
+}
+
+.notFoundProduct {
+    font-size: 25px;
+    font-weight: 700;
 }

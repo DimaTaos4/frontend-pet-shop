@@ -22,7 +22,6 @@ const CartShoppingProducts = () => {
         dispatch(deleteFromCart(id))
     }
     const cart = useSelector(selectCart)
-    console.log(cart);
     const IMAGE_URL = 'http://localhost:3333'
     const elements = cart.map(elem =>
         <div key={elem.id} className={styles.chosenProduct}>

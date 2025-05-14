@@ -2,7 +2,7 @@ import styles from './SalesItems.module.css'
 import ProductList from '../../../shared/components/ProductList/ProductList'
 import { useTheme } from '@emotion/react'
 import useProducts from '../../../shared/hooks/useProducts'
-
+import Loader from '../../../shared/components/Loader/Loader'
 const SalesItems = ({ filters = {}, limit }) => {
   const { products, loading, error } = useProducts()
   const { colors } = useTheme()
@@ -13,8 +13,7 @@ const SalesItems = ({ filters = {}, limit }) => {
     '--font-color-blue': colors.fontColorBlue,
   }
 
-  if (loading) return <p>Loading discounted products...</p>
-  if (error) return <p>Failed to load products.</p>
+
 
   const salesProducts = products.filter(p => p.discont_price)
 
@@ -41,6 +40,8 @@ const SalesItems = ({ filters = {}, limit }) => {
 
   return (
     <section className={styles.salesConteiner} style={style}>
+      {loading && <Loader loading={loading} />}
+      {error && <p className={styles.error}>Failed to load products.</p>}
       <ProductList products={limitedSales} />
     </section>
   )

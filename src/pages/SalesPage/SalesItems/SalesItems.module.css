@@ -1,8 +1,14 @@
-.salesConteiner{
+.salesConteiner {
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 32px;
     margin-bottom: 80px;
 
+}
+
+.error {
+    font-size: 25px;
+    font-weight: 700;
+    color: red;
 }

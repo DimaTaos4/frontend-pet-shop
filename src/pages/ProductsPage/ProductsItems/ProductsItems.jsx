@@ -2,7 +2,7 @@ import { useTheme } from '@emotion/react'
 import styles from './ProductsItems.module.css'
 import ProductList from '../../../shared/components/ProductList/ProductList'
 import useProducts from '../../../shared/hooks/useProducts'
-
+import Loader from '../../../shared/components/Loader/Loader'
 const ProductsItems = ({ filters }) => {
   const { colors } = useTheme()
   const { products, loading, error } = useProducts()
@@ -13,11 +13,10 @@ const ProductsItems = ({ filters }) => {
     '--font-color-blue': colors.fontColorBlue,
   }
 
-  if (loading) return <p>Loading products...</p>
-  if (error) return <p>Failed to load products.</p>
+
 
   const filteredProducts = products
-    .filter(p => !filters.discountOnly || p.discont_price) 
+    .filter(p => !filters.discountOnly || p.discont_price)
     .filter(p => !filters.priceFrom || (p.discont_price || p.price) >= +filters.priceFrom)
     .filter(p => !filters.priceTo || (p.discont_price || p.price) <= +filters.priceTo)
 
@@ -43,6 +42,8 @@ const ProductsItems = ({ filters }) => {
 
   return (
     <section className={styles.productItems} style={style}>
+      {loading && <Loader loading={loading} />}
+      {error && <p>Failed to load products.</p>}
       <ProductList products={filteredProducts} />
     </section>
   )

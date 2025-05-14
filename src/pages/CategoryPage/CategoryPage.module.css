@@ -4,3 +4,9 @@
     gap: 32px;
     margin-bottom: 80px;
 }
+
+.error {
+    font-weight: 700;
+    font-size: 25px;
+    color: red;
+}

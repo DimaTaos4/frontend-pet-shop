@@ -41,7 +41,7 @@ const CartPage = () => {
             ) : (
                 <div className={styles.emtyCart}>
                     <p>Looks like you have no items in your basket currently.</p>
-                    <Link to='/products'><Button>Continue Shopping</Button></Link>
+                    <Link ><Button>Continue Shopping</Button></Link>
                 </div>
             )}
         </section>
