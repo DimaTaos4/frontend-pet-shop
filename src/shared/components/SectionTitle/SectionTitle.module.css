@@ -1,5 +1,19 @@
-.sectionTitle{
+.sectionTitle {
     font-weight: 700;
     font-size: 64px;
     color: var(--title-color);
+}
+
+@media (max-width: 950px) {
+    .sectionTitle {
+        font-weight: 600;
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 500px) {
+    .sectionTitle {
+        font-weight: 500;
+        font-size: 38px;
+    }
 }

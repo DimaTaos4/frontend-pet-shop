@@ -61,7 +61,7 @@ const ProductList = ({ products = [] }) => {
                                     <span className={styles.price}>${elem.price}</span>
                                 </>
                             ) : (
-                                <span className={styles.discountPrice}>${elem.price}</span>
+                                <span className={styles.discountPrice}>${elem.price} </span>
                             )}
                         </div>
                     </div>

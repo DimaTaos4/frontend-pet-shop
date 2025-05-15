@@ -18,3 +18,16 @@
 .link {
     text-decoration: none;
 }
+
+@media (max-width:567px) {
+    .separatorLine {
+        display: none;
+    }
+
+    .breadcrumbsLinks {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+}

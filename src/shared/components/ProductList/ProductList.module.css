@@ -93,3 +93,17 @@
 .btnAddedToCart:hover {
     background-color: #218838;
 }
+
+@media (max-width:1103px) {
+    .item {
+
+        width: 90%;
+    }
+}
+
+@media (max-width:751px) {
+    .item {
+
+        width: 80%;
+    }
+}

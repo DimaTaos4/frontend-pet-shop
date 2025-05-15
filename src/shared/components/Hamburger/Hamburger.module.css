@@ -1,0 +1,15 @@
+
+
+@media (max-width: 760px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .hamburger button {
+        background-color: transparent;
+        border: none;
+    }
+}

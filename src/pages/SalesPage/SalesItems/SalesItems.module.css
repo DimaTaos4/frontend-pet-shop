@@ -12,3 +12,14 @@
     font-weight: 700;
     color: red;
 }
+
+@media (max-width:751px) {
+    .salesConteiner {
+
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+
+    }
+}

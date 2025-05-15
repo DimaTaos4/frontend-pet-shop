@@ -4,3 +4,11 @@
     color: var(--black);
     margin-bottom: 40px;
 }
+
+@media (max-width:1095px) {
+    .titleCategories {
+        font-weight: 600;
+        font-size: 45px;
+
+    }
+}

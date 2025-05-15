@@ -79,3 +79,74 @@
     border: none;
     cursor: pointer;
 }
+
+@media (max-width:1302px) {
+
+    .imageProduct {
+        width: 15rem;
+        height: auto;
+    }
+
+    .titleProduct h2 {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .numberChosenProduct {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        gap: 32px;
+    }
+
+    .discountPrice {
+        font-weight: 500;
+        font-size: 24px;
+        color: var(--text-color-black);
+    }
+
+    .price {
+        font-weight: 400;
+        font-size: 19px;
+        text-decoration: line-through;
+        color: var(--grey);
+    }
+
+    .originalPrice {
+        font-weight: 500;
+        font-size: 24px;
+        color: var(--text-color-black);
+    }
+}
+
+@media (max-width:1130px) {
+    .cartInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    .chosenProduct {
+        width: 85vw;
+        align-self: center;
+    }
+}
+
+@media (max-width:588px) {
+    .chosenProduct {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+
+
+    .deleteButton {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+    }
+}

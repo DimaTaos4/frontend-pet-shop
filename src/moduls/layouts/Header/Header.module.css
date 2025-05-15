@@ -1,7 +1,10 @@
 .navbar {
-  position: sticky;
   padding: 30px 0;
   border: 1px solid #DDDDDD;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
 }
 
 .navbarContent {
@@ -41,5 +44,18 @@
 
   100% {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 760px) {
+  .hamburgerWrapper {
+    display: block;
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    height: 300vh;
   }
 }

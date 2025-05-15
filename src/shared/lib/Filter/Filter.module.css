@@ -4,3 +4,10 @@
     gap: 40px;
     margin: 40px 0;
 }
+
+@media (max-width:1164px) {
+    .allFilters {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

@@ -18,7 +18,22 @@
     color: var(--blue-color);
 }
 
+
+
 .navbarMenuItem:hover {
     color: var(--blue-color);
     transform: translateY(-2px);
+}
+
+@media (max-width: 760px) {
+    .navbarMenu {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .navbarMenuItem {
+        font-weight: 600;
+        font-size: 26px;
+    }
 }

@@ -1,3 +1,21 @@
 .MainPageCategoriesStyle :hover p {
     color: none;
 }
+
+.error {
+    font-weight: 700;
+    color: red;
+    font-style: 22px;
+}
+
+
+@media (max-width:1445px) {
+    .MainPageCategoriesStyle {
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: center;
+        row-gap: 32px;
+
+    }
+}

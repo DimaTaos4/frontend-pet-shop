@@ -4,10 +4,11 @@ import storage from 'redux-persist/lib/storage'
 import categoriesReducer from './categories/categories-slice'
 import cartReducer from './cart/cart-slice'
 import { combineReducers } from 'redux'
-
+import hamburgerReducer from './hamburger/hamburger-slice'
 const rootReducer = combineReducers({
     categories: categoriesReducer,
     cart: cartReducer,
+    hamburger: hamburgerReducer,
 })
 
 const persistConfig = {
@@ -18,7 +19,6 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-// 👇 создаём store
 export const store = configureStore({
     reducer: persistedReducer,
     middleware: getDefaultMiddleware =>

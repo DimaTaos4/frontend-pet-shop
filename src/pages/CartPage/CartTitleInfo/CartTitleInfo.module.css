@@ -13,3 +13,17 @@
     background-color: #DDDDDD;
 
 }
+
+@media (max-width:588px) {
+    .line {
+        display: none;
+
+    }
+
+    .titleLineButton {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+
+}

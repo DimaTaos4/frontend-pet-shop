@@ -27,7 +27,7 @@ const MainPageForm = ({ fields }) => {
             <div className={styles.imgForm}>
                 <img src={formPetsJpg} alt="pets image" />
 
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                     {fields.map((field) => (
                         <FormField
                             key={field.name}

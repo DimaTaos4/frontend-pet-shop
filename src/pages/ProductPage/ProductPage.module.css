@@ -128,3 +128,110 @@
     font-size: 25px;
     font-weight: 700;
 }
+
+@media (max-width:1253px) {
+    .productPage {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 32px;
+        justify-content: center;
+        width: 100%;
+        padding: 16px;
+        margin-bottom: 82px;
+    }
+
+    .productImage {
+        width: 50%;
+        max-width: 700px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width:896px) {
+
+    .productInfo h2 {
+        font-weight: 600;
+        font-size: 30px;
+    }
+
+    .discountPrice {
+        font-weight: 600;
+        font-size: 42px;
+    }
+
+    .salesNumber {
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    .price {
+        font-weight: 500;
+        font-size: 28px;
+    }
+
+    .function {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+}
+
+@media (max-width:837px) {
+    .btnProduct {
+        width: 70%;
+
+    }
+}
+
+@media (max-width:733px) {
+    .btnProduct {
+        width: 70%;
+        padding: 12px 14px;
+    }
+
+    .productImage {
+        width: 65%;
+        max-width: 700px;
+
+    }
+
+    .btnAddedToCart {
+        width: 10rem;
+        padding: 12px 14px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
+@media (max-width:609px) {
+    .prices {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 4px;
+    }
+}
+
+@media (max-width:493px) {
+
+    .btnProduct {
+        width: 73%;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .productImage {
+        width: 15rem;
+        max-width: 700px;
+
+    }
+
+    .productInfo h2 {
+        font-weight: 500;
+        font-size: 22px;
+    }
+
+}

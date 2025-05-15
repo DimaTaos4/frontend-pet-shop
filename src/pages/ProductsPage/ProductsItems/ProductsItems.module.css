@@ -4,3 +4,12 @@
     gap: 32px;
     margin-bottom: 80px;
 }
+
+@media (max-width:751px) {
+    .productItems {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+    }
+}

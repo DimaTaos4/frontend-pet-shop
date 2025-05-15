@@ -20,9 +20,9 @@ const MainPageCategories = () => {
   const first4 = items.slice(0, 4);
 
   return (
-    <section>
+    <section className={styles.categoriesConteiner}>
       {loading && <Loader loading={true} />}
-      {error && <p>Error</p>}
+      {error && <p className={styles.error}>Error</p>}
       {first4.length > 0 && <CategoryList className={styles.MainPageCategoriesStyle} items={first4} style={style} />}
     </section>
   );

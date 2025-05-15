@@ -45,3 +45,23 @@
     color: var(--text-color-btn);
     transition: 0.3s ease;
 }
+
+@media (max-width:675px) {
+
+    .submitBtn {
+        width: 40%;
+        padding: 14px 28px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+}
+
+@media (max-width:390px) {
+    .btn {
+        padding: 12px 36px;
+        font-size: 18px;
+        font-weight: 470;
+
+    }
+}

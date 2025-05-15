@@ -41,3 +41,15 @@
     transition: 0.3s;
 }
 
+@media (max-width:1439px) {
+    .listItems {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 32px;
+        margin-bottom: 106px;
+        justify-content: center;
+        row-gap: 32px;
+    }
+}
+
+@media (max-width:751px) {}

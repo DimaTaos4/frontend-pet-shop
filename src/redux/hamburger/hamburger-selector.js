@@ -1,0 +1,1 @@
+export const selectHamburger = store=>store.hamburger.isOpened
