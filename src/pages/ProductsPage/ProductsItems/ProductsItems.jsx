@@ -43,7 +43,7 @@ const ProductsItems = ({ filters }) => {
   return (
     <section className={styles.productItems} style={style}>
       {loading && <Loader loading={loading} />}
-      {error && <p>Failed to load products.</p>}
+      {error && <p className={styles.error}> Failed to load products.</p>}
       <ProductList products={filteredProducts} />
     </section>
   )

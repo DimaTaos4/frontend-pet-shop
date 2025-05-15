@@ -1,3 +1,9 @@
 .categoriesItems :hover p {
     color: var(--color-font-blue);
 }
+
+.error {
+    color: red;
+    font-size: 24px;
+    font-weight: 700;
+}

@@ -24,7 +24,7 @@ const CategoriesItems = () => {
     return (
         <>
             {loading && <Loader loading={loading}  />}
-            {error && <p>Error</p>}
+            {error && <p className={styles.error}>Error</p>}
             {items.length > 0 && <CategoryList className={styles.categoriesItems} items={items} style={style} />}
         </>
     );
