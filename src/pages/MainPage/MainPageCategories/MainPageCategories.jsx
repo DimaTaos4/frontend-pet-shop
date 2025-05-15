@@ -22,7 +22,7 @@ const MainPageCategories = () => {
   return (
     <section className={styles.categoriesConteiner}>
       {loading && <Loader loading={true} />}
-      {error && <p className={styles.error}>Error</p>}
+      {error && <p className={styles.error}>Failed to load categories</p>}
       {first4.length > 0 && <CategoryList className={styles.MainPageCategoriesStyle} items={first4} style={style} />}
     </section>
   );
