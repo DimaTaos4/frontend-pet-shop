@@ -9,6 +9,7 @@ const Breadcrumbs = () => {
     const [breadcrumbItems, setBreadcrumbItems] = useState([])
 
     useEffect(() => {
+
         const pathnames = location.pathname.split('/').filter(x => x)
 
         const fetchData = async () => {
@@ -59,7 +60,7 @@ const Breadcrumbs = () => {
                         <ButtonToPages>{item.name}</ButtonToPages>
                     </Link>
                     {index < breadcrumbItems.length - 1 && (
-                        <span className={styles.separatorLine}></span>  
+                        <span className={styles.separatorLine}></span>
                     )}
                 </div>
             ))}

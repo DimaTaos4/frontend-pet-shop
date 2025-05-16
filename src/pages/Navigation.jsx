@@ -14,7 +14,6 @@ import Breadcrumbs from "../moduls/Breadcrumbs/Breadcrumbs";
 const Navigation = () => {
     const location = useLocation();
 
-    // Описание маршрутов
     const routes = [
         { path: "/" },
         { path: "/categories" },
