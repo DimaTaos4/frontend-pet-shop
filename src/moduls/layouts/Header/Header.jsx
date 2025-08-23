@@ -18,6 +18,16 @@ const Header = () => {
     '--background-color': colors.fontColorBlue
   };
   const quantity = useSelector(selectCartCount);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,7 +44,11 @@ const Header = () => {
   }, []);
 
   return (
-    <nav className={styles.navbar} style={style}>
+    <nav
+      className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}
+      style={style}
+    >
+
       <Container>
         <div className={styles.navbarContent}>
 

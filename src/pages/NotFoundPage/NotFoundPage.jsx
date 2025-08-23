@@ -1,6 +1,6 @@
 import styles from './NotFoundPage.module.css'
 import { Button } from '../../shared/components/Button/Button'
-import notFoundImage from '../../assets/404error.svg'
+import notFoundImage from '../../assets/404Image.png'
 import { useTheme } from '@emotion/react'
 import { Link } from 'react-router-dom'
 
