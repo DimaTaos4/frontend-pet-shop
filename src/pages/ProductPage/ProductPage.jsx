@@ -29,7 +29,7 @@ const ProductPage = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await axios.get(`http://localhost:3333/products/${id}`)
+                const response = await axios.get(`https://backend-pet-shop-h47s.onrender.com/products/${id}`)
                 setProduct(response.data[0])
             } catch {
                 setError('Product loading error')
@@ -45,7 +45,7 @@ const ProductPage = () => {
     if (error) return <p className={styles.error}>{error}</p>
     if (!product) return <p className={styles.notFoundProduct}>Product not found</p>
 
-    const IMAGE_BASE_URL = 'http://localhost:3333/'
+    const IMAGE_BASE_URL = 'https://backend-pet-shop-h47s.onrender.com/'
 
     const toggleDescription = () => setShowFullDescription(prev => !prev)
     const MAX_LENGTH = 300

@@ -7,7 +7,7 @@ import { addToCart } from '../../../redux/cart/cart-slice'
 import { useState } from 'react';
 
 const ProductList = ({ products = [] }) => {
-    const IMAGE_BASE_URL = 'http://localhost:3333/'
+    const IMAGE_BASE_URL = 'https://backend-pet-shop-h47s.onrender.com/'
 
 
     const dispatch = useDispatch()

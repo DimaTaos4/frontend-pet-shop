@@ -23,7 +23,7 @@ const Breadcrumbs = () => {
 
                 if (pathnames[index - 1] === 'categories') {
                     try {
-                        const res = await axios.get(`http://localhost:3333/categories/${segment}`)
+                        const res = await axios.get(`https://backend-pet-shop-h47s.onrender.com/categories/${segment}`)
                         return { name: res.data.category.title, path: url }
                     } catch {
                         return { name: 'Category', path: url }
@@ -32,7 +32,7 @@ const Breadcrumbs = () => {
 
                 if (pathnames[index - 1] === 'products') {
                     try {
-                        const res = await axios.get(`http://localhost:3333/products/${segment}`)
+                        const res = await axios.get(`https://backend-pet-shop-h47s.onrender.com/products/${segment}`)
                         return { name: res.data[0].title, path: url }
                     } catch {
                         return { name: 'Product', path: url }

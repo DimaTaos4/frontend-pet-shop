@@ -21,7 +21,7 @@ const CartShoppingProducts = () => {
         dispatch(deleteFromCart(id))
     }
     const cart = useSelector(selectCart)
-    const IMAGE_URL = 'http://localhost:3333'
+    const IMAGE_URL = 'https://backend-pet-shop-h47s.onrender.com'
     const elements = cart.map(elem =>
         <div key={elem.id} className={styles.chosenProduct}>
             <img className={styles.imageProduct} src={`${IMAGE_URL}${elem.image}`} alt={elem.title} />

@@ -16,7 +16,7 @@ const CategoryPage = () => {
     useEffect(() => {
         const fetchCategoryData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3333/categories/${id}`)
+                const response = await axios.get(`https://backend-pet-shop-h47s.onrender.com/categories/${id}`)
                 setCategory(response.data.category)
                 setProducts(response.data.data)
             } catch {

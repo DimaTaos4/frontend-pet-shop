@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './CategoryList.module.css';
 import { useTheme } from '@emotion/react';
-const IMAGE_BASE_URL = 'http://localhost:3333/';
+const IMAGE_BASE_URL = 'https://backend-pet-shop-h47s.onrender.com/';
 
 const CategoryList = ({ items = [], className = '' }) => {
   const { colors } = useTheme();
